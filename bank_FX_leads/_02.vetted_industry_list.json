@@ -1,0 +1,1 @@
+{"companies": [{"company": "Company A", "product": ["Product 1", "Product 2"], "material": "Material A", "region": "Region 1", "operations": ["Operation 1", "Operation 2"]}, {"company": "Company B", "product": ["Product 3", "Product 4"], "material": "Material B", "region": "Region 2", "operations": ["Operation 3", "Operation 4"]}]}

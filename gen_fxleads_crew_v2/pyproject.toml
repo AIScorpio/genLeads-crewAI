@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "gen_fxleads_crew_v2"
+version = "0.1.0"
+description = "gen_FXLeads_crew_v2 using crewAI"
+authors = ["Leon X Li <leonchao@yeah.net>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+crewai = {extras = ["tools"], version = "^0.30.11"}
+
+[tool.poetry.scripts]
+gen_fxleads_crew_v2 = "gen_fxleads_crew_v2.main:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

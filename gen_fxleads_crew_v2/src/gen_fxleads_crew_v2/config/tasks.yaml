@@ -1,0 +1,88 @@
+research_task:
+  description: >
+    Research and data collection:
+      a. Search for companies headquartared in {headquatar} and operating in the {industry} sector in {region}.
+      b. Utilize keywords and filters, such as "{industry}", "{material}", "{region}" and "subsidiaries," to narrow down the search results.
+      c. Analyze company profiles, annual reports, financial statements, and press releases to gather information on their industry, 
+        silver application, and demand for {material} as a primary raw material for production.
+      d. Create a preliminary list of potential business clients, including their company name, industry, and a succinct overview of their {material} application.
+    Analysis and shortlisting:
+      a. Analyze the preliminary list of potential business clients to ensure they meet the project criteria, 
+        i.e., operating in the {industry} sector, utilizing {material} as a primary material, 
+        having a direct demand for silver as a raw material, 
+        and being based in {region} or being {region}-based subsidiaries of international corporations.
+      b. Rank the potential business clients based on their relevance, size, growth potential, and {material} demand.
+      c. Select the top 10 prospective business clients for the final list.
+    Verification and finalization:
+      a. Verify the accuracy of the information gathered for each of the top {expected_num} prospective business clients.
+      b. Ensure that the information gathered is up-to-date and reliable, using multiple sources to verify the accuracy of the data.
+      c. Update the company profiles, including their industry and a succinct overview of their {material} application.
+      d. Prepare the final report, including the list of the top {expected_num} prospective business clients and their profiles.
+
+    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: 
+      If you need to use a search tool and pass in a parameter called 'query', 
+      you should NOT write 'search_query' or 'search\_query'. 
+      THIS IS VERY IMPORTANT, else the tool will not work.
+
+  expected_output: >
+    Generate a comprehensive list of {expected_num} prospective business clients operating in the {industry} sector, 
+    specifically those that utilize {material} as a primary material in their manufacturing processes 
+    and have a direct demand for {material} as a raw material. 
+    The clients will be based in {headquatar} or be {region}-based subsidiaries of international corporations, 
+    with detailed company profiles, including their industry and a succinct overview of their {material} application.
+    In Markdown format with indent as follows:
+      - Company name
+      - Industry
+      - Company overview
+      - Headquarters Location
+      - If {region} Subsidiaries (if applicable): "Yes" or "No"
+        - If Yes:
+          - {region} subsidiaries entity name (if applicable)
+      - Product that directly use {material} as primary raw material
+      - Source citation in terms of web URLs (if applicable)
+    The list should be ranked based on their relevance, size, growth potential, and  {material} demand.
+
+
+reporting_task:
+  description: >
+    Verify prospective business clients:
+      a. From the prospective business clients list,
+         exclude those that use {material}-containing semi-finished products from other entities.
+      b. For each company after narrowlisting, search one-hop upstream supplier and downstream consumer entities, 
+        and its main competitors (you can ONLY use tools for this part, and should only one company at a time, then search the next).
+    Create client profiles:
+      a. For each client, provide their company name, industry, and a succinct overview of their {material} application.
+      b. Include any relevant details, such as company size, revenue, and market share.
+      c. Highlight any unique selling points or competitive advantages of the {offering} based on their production.
+    Write the final report:
+      a. Compile the client profiles into a comprehensive report.
+      b. Organize the report in a clear and logical manner, making it easy to read and understand.
+      c. Ensure that the report is concise and meets the quality standards and guidelines established by the goal.
+    Review and edit the report:
+      a. Review the report for accuracy, clarity, and completeness.
+      b. Edit the report for grammar, spelling, and punctuation errors.
+      c. Ensure that the report meets the quality standards and guidelines established by the goal.
+
+    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: 
+      If you need to use a search tool and pass in a parameter called 'query', 
+      you should NOT write 'search_query' or 'search\_query'. 
+      THIS IS VERY IMPORTANT, else the tool will not work.
+
+  expected_output: >
+    A fully fledge a high-quality final report with the mains topics, each with a full section of information.
+    Formated as markdown without '```', with indent as follows:
+      - Company name
+      - Industry
+      - Company overview
+      - Headquarters Location
+      - If {region} Subsidiaries (if applicable): "Yes" or "No"
+        - If Yes:
+          - {region} subsidiaries entity name (if applicable)
+      - Product that directly use {material} as primary raw material
+      - Source citation in terms of web URLs (if applicable)
+      - Technical analysis of the matching relevance of the {offering} to their {material} demands in production.
+      - Suppliers (if applicable)
+      - Consumers (if applicable)
+      - Key competitors (if applicable)
+    The list should be ranked based on their relevance, size, growth potential, and {material} demand.
+

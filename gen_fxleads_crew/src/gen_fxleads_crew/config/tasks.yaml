@@ -1,0 +1,97 @@
+industrial_task:
+  description: >
+    Search {expected_num} companies worldwide within the {industry} industry 
+    that utilize {material} as a raw material. 
+    These companies should have a business presence in {region} 
+    and be involved in activities such as production, manufacturing, or supply chain operations 
+    in the specified region.
+
+    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: 
+      If you need to use a search tool and pass in a parameter called 'query', 
+      you should NOT write 'search_query' or 'search\_query'. 
+      THIS IS VERY IMPORTANT, else the tool will not work.
+
+      # When you think you have the final answer, use the 'human_input_tool' to ask for human verification. 
+      # ONLY use this tool if you have a strong belief that your answer is finalized. 
+      # If you use this tool, 
+      # please write down your reasoning for using it in the 'human_input_tool' as well.
+
+  expected_output: >
+    List of {expected_num} companies in markdown format scheme:
+    - Company name
+      - Industry 
+      - Headquarter location
+      - Core products or service offerings made with {material} as raw material 
+      - whether or not presence in {region}
+      - Type of operations in {region}, any or multi from [production, manufacturing, supply chain]
+
+product_task:
+  description: >
+    Generate potential client list 
+    based on the initial industry list, 
+    verify each company that their products and service offerings 
+    are INDEED using {material}, with at least one factual findings. 
+    Given the initial industry list from the context, 
+    verify each company by confirming one or more of their products and service offerings are INDEED using {material}.
+
+    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: 
+      If you need to use a search tool and pass in a parameter called 'query', 
+      you should NOT write 'search_query' or 'search\_query'. 
+      THIS IS VERY IMPORTANT, else the tool will not work.
+
+  expected_output: >
+    List ONLY the companies that are verified, 
+    in markdown format scheme:
+    - Company name
+      - Industry 
+      - Headquarter location
+      - Core products or service offerings made with {material} as raw material 
+      - whether or not presence in {region}
+      - Type of operations in {region}, any or multi from [production, manufacturing, supply chain]
+      - Products or service offerings made with {material} as raw material
+        - Product name
+        - Product description
+
+analytic_task:
+  description: >
+    Continuously monitor and analyze market data for 
+    the underlying asset {material}. 
+    Use statistical modeling and machine learning to 
+    identify trends and predict both global and {region} market movements.
+  expected_output: >
+    Insights extracted from most recent significant market 
+    opportunities or risks for {material} price movement.
+
+advisory_task:
+  description: >
+    Based on each potential client list, 
+    and financial insights from the {material} market data analysis, 
+    Promote HSBC MSS {offering} 
+    for the underlying asset {material} 
+    aiming to engage the potential clients.
+    If no potential client has operations in {region}, terminate the task. 
+    Else
+    For every single potential client, do the following: 
+        Using the knowledge gathered from 
+        the potential client's information of their operations in {region} 
+        and their products and services offerings, 
+        alongside with the {material} market analytics insights, 
+        craft a tailored outreach campaign 
+        aimed at key decision makers. 
+        The campaign should address their products and operations in {region}, 
+        financial insights from most recent market opportunities or risks from {material} price movement, 
+        and how HSBC MSS {offering} can be their best of interest. 
+    Your communication must resonate 
+    with company values and their downstream customers, 
+    demonstrating a deep understanding of 
+    their business and needs.\n
+    Don't make assumptions and only 
+    use information you absolutely sure about.
+  expected_output: >
+    A series of professional email drafts in markdown format, 
+    tailored to every optential client. 
+    Each draft should include 
+    a compelling narrative that connects our {offering} 
+    with their productions and operations. 
+    Ensure the tone is engaging, professional, 
+    and aligned with each client's corporate identity.
